@@ -28,6 +28,7 @@ h3 {
   font-size: f.rem(24);
   line-height: f.rem(28);
   text-transform: uppercase;
+  letter-spacing: f.rem(4.8);
 }
 
 h4 {
@@ -35,6 +36,9 @@ h4 {
   font-size: f.rem(20);
   line-height: f.rem(28);
   text-transform: uppercase;
+  letter-spacing: f.rem(4);
+  text-transform: uppercase;
+  letter-spacing: f.rem(4);
 }
 
 h5 {
@@ -47,4 +51,6 @@ h6 {
   font-weight: 400;
   font-size: f.rem(15);
   line-height: f.rem(28);
+  text-transform: uppercase;
+  letter-spacing: f.rem(4);
 }
