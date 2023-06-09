@@ -15,7 +15,7 @@ const getTimeZone = (call) => {
   call();
 };
 
-const showLocation = (call) => {
+const showLocation = () => {
   console.log(currLocation);
   let worldTimeAPI = `http://worldtimeapi.org/api/timezone/${currLocation}`;
   // let worldTimeAPI = `http://worldtimeapi.org/api/timezone/America`;
@@ -33,7 +33,7 @@ const showLocation = (call) => {
       // console.log(res.day_of_year);
       // console.log(res.week_number);
       // console.log(res.datetime.slice(0, 10));
-      call();
+      cloak();
     });
 };
 
@@ -72,8 +72,10 @@ const cloak = () => {
   }, 1000);
 };
 
+// setInterval(() => {
+//   showLocation();
+// }, 60000);
+
 getTimeZone(() => {
-  showLocation(() => {
-    cloak();
-  });
+  showLocation();
 });
