@@ -13,20 +13,20 @@ p {
 h1 {
   font-weight: 700;
   font-size: f.rem(200);
-  line-height: f.rem(200);
+  // line-height: f.rem(200);
 }
 
 h2 {
   font-weight: 700;
   font-size: f.rem(56);
-  line-height: f.rem(68);
-  color: var(--gray);
+  // line-height: f.rem(68);
+  // color: var(--gray);
 }
 
 h3 {
   font-weight: 700;
   font-size: f.rem(24);
-  line-height: f.rem(28);
+  // line-height: f.rem(28);
   text-transform: uppercase;
   letter-spacing: f.rem(4.8);
 }
@@ -34,7 +34,7 @@ h3 {
 h4 {
   font-weight: 400;
   font-size: f.rem(20);
-  line-height: f.rem(28);
+  // line-height: f.rem(28);
   text-transform: uppercase;
   letter-spacing: f.rem(4);
   text-transform: uppercase;
@@ -44,13 +44,13 @@ h4 {
 h5 {
   font-weight: 700;
   font-size: f.rem(18);
-  line-height: f.rem(28);
+  // line-height: f.rem(28);
 }
 
 h6 {
   font-weight: 400;
   font-size: f.rem(15);
-  line-height: f.rem(28);
+  // line-height: f.rem(28);
   text-transform: uppercase;
   letter-spacing: f.rem(4);
 }

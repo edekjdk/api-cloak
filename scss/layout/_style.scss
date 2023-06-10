@@ -16,3 +16,18 @@
     rgba(0, 0, 0, 0.6) 100%
   );
 }
+
+.cloak {
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: f.rem(10);
+    color: var(--white);
+  }
+
+  &__cloak {
+    display: flex;
+    align-items: flex-end;
+    color: var(--white);
+  }
+}
