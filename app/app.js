@@ -15,7 +15,7 @@ const getTimeZone = (call) => {
   call();
 };
 
-const showLocation = () => {
+const showLocation = (call) => {
   console.log(currLocation);
   let worldTimeAPI = `http://worldtimeapi.org/api/timezone/${currLocation}`;
   // let worldTimeAPI = `http://worldtimeapi.org/api/timezone/America`;
@@ -33,7 +33,7 @@ const showLocation = () => {
       // console.log(res.day_of_year);
       // console.log(res.week_number);
       // console.log(res.datetime.slice(0, 10));
-      cloak();
+      call();
     });
 };
 
@@ -54,22 +54,51 @@ const cloak = () => {
         }
       }
     }
+    console.log(seconds);
+    testTime.innerHTML = `${hours}:${minutes}:${seconds}`;
     if (minutes < 10) {
-      testTime.innerHTML = `${hours}:0${minutes}`;
+      testTime.innerHTML = `${hours}:0${minutes}:${seconds}`;
       if (hours < 10) {
-        testTime.innerHTML = `0${hours}:0${minutes}`;
-      } else {
-        testTime.innerHTML = `${hours}:0${minutes}`;
+        testTime.innerHTML = `0${hours}:0${minutes}:${seconds}`;
       }
-    } else {
-      testTime.innerHTML = `${hours}:${minutes}`;
-      if (hours < 10) {
-        testTime.innerHTML = `0${hours}:${minutes}`;
-      } else {
-        testTime.innerHTML = `${hours}:${minutes}`;
+    }
+    if (hours < 10) {
+      testTime.innerHTML = `0${hours}:${minutes}:${seconds}`;
+      if (minutes < 10) {
+        testTime.innerHTML = `0${hours}:0${minutes}:${seconds}`;
       }
     }
   }, 1000);
+
+  // setInterval(() => {
+  //   seconds += 1;
+  //   if (seconds === 60) {
+  //     seconds = 0;
+  //     minutes += 1;
+  //     if (minutes === 60) {
+  //       hours += 1;
+  //       minutes = 0;
+  //       if (hours === 24) {
+  //         hours = 0;
+  //       }
+  //     }
+  //   }
+  //   if (minutes < 10) {
+  //     testTime.innerHTML = `${hours}:0${minutes}`;
+  //     if (hours < 10) {
+  //       testTime.innerHTML = `0${hours}:0${minutes}`;
+  //     } else {
+  //       testTime.innerHTML = `${hours}:0${minutes}`;
+  //     }
+  //   } else {
+  //     testTime.innerHTML = `${hours}:${minutes}`;
+  //     if (hours < 10) {
+  //       testTime.innerHTML = `0${hours}:${minutes}`;
+  //     } else {
+  //       testTime.innerHTML = `${hours}:${minutes}`;
+  //     }
+  //   }
+  // }, 1000);
 };
 
 // setInterval(() => {
@@ -77,5 +106,7 @@ const cloak = () => {
 // }, 60000);
 
 getTimeZone(() => {
-  showLocation();
+  showLocation(() => {
+    cloak();
+  });
 });
