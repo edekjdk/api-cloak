@@ -2,6 +2,10 @@
 const ipBaseAPI =
   'https://api.ipbase.com/v2/info?apikey=n2PKHxJs6IOE6W6HmT39RT4SlmZeVd9xMDFxStiY';
 let currLocation;
+const randonQuoteAPI = 'https://api.quotable.io/random';
+const quouteText = document.querySelector('.quoute__text');
+const quouteAuthor = document.querySelector('.quoute__author');
+const quouteRefresh = document.querySelector('.quoute__refresh');
 let time;
 let city;
 let country;
@@ -141,3 +145,16 @@ getTimeZone(() => {
     cloak();
   });
 });
+
+const newQuoute = () => {
+  fetch(randonQuoteAPI)
+    .then((res) => res.json())
+    // .then((res) => console.log(res))
+    .then((res) => {
+      quouteText.textContent = res.content;
+      quouteAuthor.textContent = res.author;
+    });
+};
+
+quouteRefresh.addEventListener('click', newQuoute);
+window.addEventListener('load', newQuoute);

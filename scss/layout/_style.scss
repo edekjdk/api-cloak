@@ -66,6 +66,13 @@ main {
   );
 }
 
+.quoute {
+  &__refresh {
+    background-color: transparent;
+    border: none;
+  }
+}
+
 .cloak {
   &__header {
     display: flex;
