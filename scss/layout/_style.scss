@@ -47,8 +47,11 @@
 }
 
 main {
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 2;
+  padding: f.rem(30);
 }
 .shadow {
   width: 100%;
@@ -67,31 +70,109 @@ main {
 }
 
 .quoute {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: f.rem(20);
+  height: f.rem(500);
+  height: calc(100% - f.rem(350));
+  // display: none;
+  // padding-bottom: f.rem(300);
   &__refresh {
     background-color: transparent;
     border: none;
+    position: absolute;
+    top: f.rem(10);
+    right: 0;
+  }
+
+  &__text {
+    font-size: f.rem(15);
+    color: var(--white);
+    width: calc(100% - f.rem(30));
+    &::before {
+      content: '"';
+    }
+    &::after {
+      content: '"';
+    }
+  }
+  &__author {
+    color: var(--white);
+    font-size: f.rem(15);
   }
 }
 
 .cloak {
+  display: flex;
+  flex-direction: column;
+  gap: f.rem(18);
+  // &__cloak {
+  //   // height: 100%;
+  // }
   &__header {
     display: flex;
     align-items: center;
     gap: f.rem(10);
     color: var(--white);
+
+    &-heading {
+      font-size: f.rem(18);
+      &-span {
+        display: none;
+
+        @include b.break('medium') {
+          display: inline;
+        }
+      }
+    }
   }
 
   &__cloak {
     display: flex;
     align-items: flex-end;
     color: var(--white);
-
+    // gap: f.rem(50);
     &-zone {
-      margin-bottom: f.rem(30);
+      font-size: f.rem(14);
+      font-weight: 100;
+      margin-bottom: f.rem(19);
+    }
+    & .test {
+      font-size: f.rem(95);
+      overflow: unset;
     }
   }
 
   &__container {
     color: var(--white);
+
+    &-place {
+      font-size: f.rem(19);
+    }
+  }
+}
+
+.show-more-button {
+  height: f.rem(40);
+  width: f.rem(110);
+  border-radius: f.rem(30);
+  color: var(--gray);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: f.rem(8);
+  position: absolute;
+  bottom: f.rem(50);
+
+  &__circle {
+    width: 27px;
+    height: 27px;
+    background-color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
