@@ -76,6 +76,11 @@ main {
   gap: f.rem(20);
   height: f.rem(500);
   height: calc(100% - f.rem(350));
+  transition: opacity 0.3s;
+  // transform: translateY(-500px);
+  &--active {
+    opacity: 0;
+  }
   // display: none;
   // padding-bottom: f.rem(300);
   &__refresh {
@@ -110,6 +115,11 @@ main {
   // &__cloak {
   //   // height: 100%;
   // }
+  transition: transform 0.3s;
+  &--active {
+    transform: translateY(-300px);
+  }
+
   &__header {
     display: flex;
     align-items: center;
@@ -141,6 +151,7 @@ main {
     & .test {
       font-size: f.rem(95);
       overflow: unset;
+      left: 0;
     }
   }
 
@@ -163,8 +174,9 @@ main {
   align-items: center;
   justify-content: center;
   gap: f.rem(8);
-  position: absolute;
-  bottom: f.rem(50);
+  // position: absolute;
+  margin-top: f.rem(70);
+  // bottom: f.rem(50);
 
   &__circle {
     width: 27px;

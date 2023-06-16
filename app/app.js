@@ -3,6 +3,9 @@ const ipBaseAPI =
   'https://api.ipbase.com/v2/info?apikey=n2PKHxJs6IOE6W6HmT39RT4SlmZeVd9xMDFxStiY';
 let currLocation;
 const randonQuoteAPI = 'https://api.quotable.io/random';
+const quoute = document.querySelector('.quoute');
+const cloakCon = document.querySelector('.cloak');
+const showMoreButton = document.querySelector('.show-more-button');
 const quouteText = document.querySelector('.quoute__text');
 const quouteAuthor = document.querySelector('.quoute__author');
 const quouteRefresh = document.querySelector('.quoute__refresh');
@@ -158,3 +161,11 @@ const newQuoute = () => {
 
 quouteRefresh.addEventListener('click', newQuoute);
 window.addEventListener('load', newQuoute);
+
+const showMore = () => {
+  // console.log('jebac patricka cwela');
+  quoute.classList.toggle('quoute--active');
+  cloakCon.classList.toggle('cloak--active');
+};
+
+showMoreButton.addEventListener('click', showMore);
