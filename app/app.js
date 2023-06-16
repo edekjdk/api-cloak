@@ -3,23 +3,28 @@ const ipBaseAPI =
   'https://api.ipbase.com/v2/info?apikey=n2PKHxJs6IOE6W6HmT39RT4SlmZeVd9xMDFxStiY';
 let currLocation;
 let time;
+let city;
+let country;
 const testTime = document.querySelector('.test');
 const getTimeZone = (call) => {
-  fetch(ipBaseAPI)
-    .then((res) => res.json())
-    .then((res) => {
-      currLocation = res.data.timezone.id;
-      return res;
-    })
-    .then((res) => {
-      call();
-      return res;
-    })
-    .then((res) => renderPage2(res));
+  // fetch(ipBaseAPI)
+  // .then((res) => res.json())
+  // .then((res) => {
+  //   currLocation = res.data.timezone.id;
+  //   return res;
+  // })
+  // .then((res) => {
+  //   call();
+  //   return res;
+  // })
+  // .then((res) => renderPage2(res));
   // currLocation = 'America/Chicago';
-  // currLocation = 'Europe/Warsaw';
+  currLocation = 'Europe/Warsaw';
+  city = 'Warsaw';
+  country = 'PL';
+  renderPage2(city, country);
   // country = 'PL';
-  // call();
+  call();
 };
 
 const renderPage = (res) => {
@@ -30,10 +35,11 @@ const renderPage = (res) => {
   // place.innerHTML = res.time.slice();
 };
 
-const renderPage2 = (res) => {
-  console.log(res);
+const renderPage2 = (res, res2) => {
+  // console.log(res);
   const place = document.querySelector('.cloak__container-place');
-  place.innerHTML = `in ${res.data.location.city.name}, ${res.data.location.country.alpha2}`;
+  // place.innerHTML = `in ${res.data.location.city.name}, ${res.data.location.country.alpha2}`;
+  place.innerHTML = `in ${res}, ${res2}`;
 };
 
 const showLocation = (call) => {

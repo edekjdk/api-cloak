@@ -1,6 +1,55 @@
 @use '../global/breakpoints' as b;
 @use '../global/functions' as f;
 
+// width: 100vw;
+// height: 100vh;
+// background-image: url('../../assets/mobile/bg-image-daytime.jpg');
+
+// img {
+//   width: 100%;
+//   height: 100%;
+// }
+.background {
+  img {
+    position: absolute;
+    z-index: -2;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  & .b1 {
+    display: block;
+    @include b.break('medium') {
+      display: none;
+    }
+    @include b.break('large') {
+      display: none;
+    }
+  }
+  & .b2 {
+    display: none;
+    @include b.break('medium') {
+      display: block;
+    }
+    @include b.break('large') {
+      display: none;
+    }
+  }
+  & .b3 {
+    display: none;
+    @include b.break('medium') {
+      display: none;
+    }
+    @include b.break('large') {
+      display: block;
+    }
+  }
+}
+
+main {
+  position: absolute;
+  z-index: 2;
+}
 .shadow {
   width: 100%;
   height: 100%;
@@ -8,7 +57,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     180deg,
@@ -28,6 +77,14 @@
   &__cloak {
     display: flex;
     align-items: flex-end;
+    color: var(--white);
+
+    &-zone {
+      margin-bottom: f.rem(30);
+    }
+  }
+
+  &__container {
     color: var(--white);
   }
 }
