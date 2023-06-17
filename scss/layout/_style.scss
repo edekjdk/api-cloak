@@ -188,3 +188,19 @@ main {
     justify-content: center;
   }
 }
+
+.more-information {
+  min-width: 100vw;
+  min-height: f.rem(350);
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(350px);
+  // transition: ease-in-out 0.3s;
+  transition: transform 0.3s;
+
+  &--active {
+    transform: translateY(0);
+  }
+}

@@ -9,6 +9,7 @@ const showMoreButton = document.querySelector('.show-more-button');
 const quouteText = document.querySelector('.quoute__text');
 const quouteAuthor = document.querySelector('.quoute__author');
 const quouteRefresh = document.querySelector('.quoute__refresh');
+const moreInformation = document.querySelector('.more-information');
 let time;
 let city;
 let country;
@@ -166,6 +167,15 @@ const showMore = () => {
   // console.log('jebac patricka cwela');
   quoute.classList.toggle('quoute--active');
   cloakCon.classList.toggle('cloak--active');
+  moreInformation.classList.toggle('more-information--active');
+  if (cloakCon.classList.contains('cloak--active')) {
+    showMoreButton.innerHTML =
+      '<h6>less</h6><div class="show-more-button__circle"><i class="fa-solid fa-angle-up" style="color: #ffffff;"></i></div>';
+  } else {
+    showMoreButton.innerHTML =
+      '<h6>more</h6><div class="show-more-button__circle"><i class="fa-solid fa-angle-down" style="color: #ffffff;"></i></div>';
+    // '<h6>more</h6><div class="show-more-button__circle"><img src="assets/desktop/icon-arrow-down.svg" alt="arrowdown"></div>';
+  }
 };
 
 showMoreButton.addEventListener('click', showMore);
