@@ -40,6 +40,17 @@ const renderPage = (res) => {
   console.log(res);
 
   zone.innerHTML = res.abbreviation;
+  document.querySelector('.more-information__container-data-zone').innerHTML =
+    res.timezone;
+  document.querySelector(
+    '.more-information__container-data-day-of-year'
+  ).innerHTML = res.day_of_year;
+  document.querySelector(
+    '.more-information__container-data-day-of-week'
+  ).innerHTML = res.day_of_week;
+  document.querySelector(
+    '.more-information__container-data-week-number'
+  ).innerHTML = res.week_number;
   // place.innerHTML = res.time.slice();
 };
 

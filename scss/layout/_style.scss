@@ -190,15 +190,36 @@ main {
 }
 
 .more-information {
+  display: flex;
+  flex-direction: column;
+  padding: f.rem(30);
+  justify-content: space-evenly;
   min-width: 100vw;
   min-height: f.rem(350);
-  background-color: white;
+  // background-color: var(--gray);
+  background: rgb(200, 201, 201);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 201, 201, 0.9079832616640406) 100%,
+    rgba(200, 201, 201, 0.7651261188068977) 100%
+  );
   position: absolute;
   bottom: 0;
   left: 0;
   transform: translateY(350px);
   // transition: ease-in-out 0.3s;
   transition: transform 0.3s;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray);
+    & h6 {
+      font-size: f.rem(11);
+      letter-spacing: f.rem(2);
+    }
+  }
 
   &--active {
     transform: translateY(0);
