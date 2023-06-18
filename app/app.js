@@ -1,4 +1,4 @@
-// const worldTimeAPI = 'http://worldtimeapi.org/api/timezone';
+// const worldTimeAPI = 'https://worldtimeapi.org/api/timezone';
 const ipBaseAPI =
   'https://api.ipbase.com/v2/info?apikey=n2PKHxJs6IOE6W6HmT39RT4SlmZeVd9xMDFxStiY';
 let currLocation;
@@ -63,7 +63,7 @@ const renderPage2 = (res, res2) => {
 
 const showLocation = (call) => {
   console.log(currLocation);
-  let worldTimeAPI = `http://worldtimeapi.org/api/timezone/${currLocation}`;
+  let worldTimeAPI = `https://worldtimeapi.org/api/timezone/${currLocation}`;
   // let worldTimeAPI = `http://worldtimeapi.org/api/timezone/America`;
   fetch(worldTimeAPI)
     .then((res) => res.json())
