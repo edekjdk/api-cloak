@@ -52,6 +52,10 @@ main {
   position: absolute;
   z-index: 2;
   padding: f.rem(30);
+
+  @include b.break('medium') {
+    padding: f.rem(80) f.rem(60) 0;
+  }
 }
 .shadow {
   width: 100%;
@@ -78,6 +82,11 @@ main {
   height: calc(100% - f.rem(350));
   transition: opacity 0.3s;
   // transform: translateY(-500px);
+
+  @include b.break('medium') {
+    height: calc(100% - f.rem(450));
+  }
+
   &--active {
     opacity: 0;
   }
@@ -89,12 +98,22 @@ main {
     position: absolute;
     top: f.rem(10);
     right: 0;
+
+    @include b.break('medium') {
+      // position: ;
+      left: f.rem(605);
+    }
   }
 
   &__text {
     font-size: f.rem(15);
     color: var(--white);
     width: calc(100% - f.rem(30));
+
+    @include b.break('medium') {
+      font-size: f.rem(17);
+      max-width: f.rem(600);
+    }
     &::before {
       content: '"';
     }
@@ -105,6 +124,10 @@ main {
   &__author {
     color: var(--white);
     font-size: f.rem(15);
+
+    @include b.break('medium') {
+      font-size: f.rem(17);
+    }
   }
 }
 
@@ -118,6 +141,10 @@ main {
   transition: transform 0.3s;
   &--active {
     transform: translateY(-300px);
+
+    @include b.break('medium') {
+      transform: translateY(-450px);
+    }
   }
 
   &__header {
@@ -152,6 +179,10 @@ main {
       font-size: f.rem(95);
       overflow: unset;
       left: 0;
+
+      @include b.break('medium') {
+        font-size: f.rem(150);
+      }
     }
   }
 
@@ -210,11 +241,24 @@ main {
   // transition: ease-in-out 0.3s;
   transition: transform 0.3s;
 
+  @include b.break('medium') {
+    min-height: f.rem(450);
+    transform: translateY(450px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--gray);
+
+    @include b.break('medium') {
+      flex-direction: column;
+      justify-content: center;
+    }
     & h6 {
       font-size: f.rem(11);
       letter-spacing: f.rem(2);
@@ -223,5 +267,10 @@ main {
 
   &--active {
     transform: translateY(0);
+
+    // @include b.break('medium') {
+    //   min-height: f.rem(450);
+    //   transform: translateY(450px);
+    // }
   }
 }
