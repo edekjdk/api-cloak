@@ -247,6 +247,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    font-size: f.rem(60);
   }
 
   &__container {
@@ -258,10 +259,20 @@ main {
     @include b.break('medium') {
       flex-direction: column;
       justify-content: center;
+      gap: f.rem(10);
     }
     & h6 {
       font-size: f.rem(11);
       letter-spacing: f.rem(2);
+
+      @include b.break('medium') {
+        font-size: f.rem(17);
+      }
+    }
+    & h5 {
+      @include b.break('medium') {
+        font-size: f.rem(20);
+      }
     }
   }
 
