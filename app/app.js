@@ -16,22 +16,23 @@ let country;
 const testTime = document.querySelector('.test');
 const getTimeZone = (call) => {
   // fetch(ipBaseAPI)
-  // .then((res) => res.json())
-  // .then((res) => {
-  //   currLocation = res.data.timezone.id;
-  //   return res;
-  // })
-  // .then((res) => {
-  //   call();
-  //   return res;
-  // })
-  // .then((res) => renderPage2(res));
+  //   .then((res) => res.json())
+  //   .then((res) => {
+  //     // console.log(res);
+  //     currLocation = res.data.timezone.id;
+  //     return res;
+  //   })
+  //   .then((res) => {
+  //     call();
+  //     return res;
+  //   })
+  //   .then((res) => renderPage2(res));
+  //test
   // currLocation = 'America/Chicago';
   currLocation = 'Europe/Warsaw';
   city = 'Warsaw';
   country = 'PL';
   renderPage2(city, country);
-  // country = 'PL';
   call();
 };
 
@@ -56,6 +57,13 @@ const renderPage = (res) => {
 
 const changeTheme = (hours) => {
   if (hours >= 8 && hours < 20) {
+    moreInformation.classList.remove('more-information--dark');
+    document
+      .querySelector('.cloak__header-image')
+      .setAttribute('src', 'assets/desktop/icon-sun.svg');
+    document.querySelector(
+      '.cloak__header-heading'
+    ).innerText = `good morning, it's currently`;
     console.log(hours);
     document
       .querySelector('.b1')
@@ -67,6 +75,15 @@ const changeTheme = (hours) => {
       .querySelector('.b3')
       .setAttribute('src', 'assets/desktop/bg-image-daytime.jpg');
   } else {
+    document
+      .querySelector('.cloak__header-image')
+      .setAttribute('src', 'assets/desktop/icon-moon.svg');
+
+    document.querySelector(
+      '.cloak__header-heading'
+    ).innerText = `good evening, it's currently`;
+
+    moreInformation.classList.add('more-information--dark');
     document
       .querySelector('.b1')
       .setAttribute('src', 'assets/mobile/bg-image-nighttime.jpg');

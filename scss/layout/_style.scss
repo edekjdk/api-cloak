@@ -311,4 +311,18 @@ main {
     //   transform: translateY(450px);
     // }
   }
+
+  &--dark {
+    color: var(--white);
+    & h5,
+    h6 {
+      color: white;
+    }
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.8071429255295868) 100%,
+      rgba(0, 0, 0, 0.7651261188068977) 100%
+    );
+  }
 }
