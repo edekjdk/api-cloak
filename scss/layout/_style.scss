@@ -56,6 +56,10 @@ main {
   @include b.break('medium') {
     padding: f.rem(80) f.rem(60) 0;
   }
+
+  @include b.break('large') {
+    padding: f.rem(80) f.rem(200) 0;
+  }
 }
 .shadow {
   width: 100%;
@@ -174,6 +178,10 @@ main {
       font-size: f.rem(14);
       font-weight: 100;
       margin-bottom: f.rem(19);
+
+      @include b.break('large') {
+        font-size: f.rem(25);
+      }
     }
     & .test {
       font-size: f.rem(95);
@@ -183,11 +191,21 @@ main {
       @include b.break('medium') {
         font-size: f.rem(150);
       }
+
+      @include b.break('large') {
+        font-size: f.rem(200);
+      }
     }
   }
 
   &__container {
     color: var(--white);
+
+    @include b.break('large') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     &-place {
       font-size: f.rem(19);
@@ -209,6 +227,9 @@ main {
   margin-top: f.rem(70);
   // bottom: f.rem(50);
 
+  @include b.break('large') {
+    margin: 0;
+  }
   &__circle {
     width: 27px;
     height: 27px;
