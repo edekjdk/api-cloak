@@ -54,6 +54,31 @@ const renderPage = (res) => {
   // place.innerHTML = res.time.slice();
 };
 
+const changeTheme = (hours) => {
+  if (hours >= 8 && hours < 20) {
+    console.log(hours);
+    document
+      .querySelector('.b1')
+      .setAttribute('src', 'assets/mobile/bg-image-daytime.jpg');
+    document
+      .querySelector('.b2')
+      .setAttribute('src', 'assets/tablet/bg-image-daytime.jpg');
+    document
+      .querySelector('.b3')
+      .setAttribute('src', 'assets/desktop/bg-image-daytime.jpg');
+  } else {
+    document
+      .querySelector('.b1')
+      .setAttribute('src', 'assets/mobile/bg-image-nighttime.jpg');
+    document
+      .querySelector('.b2')
+      .setAttribute('src', 'assets/tablet/bg-image-nighttime.jpg');
+    document
+      .querySelector('.b3')
+      .setAttribute('src', 'assets/desktop/bg-image-nighttime.jpg');
+  }
+};
+
 const renderPage2 = (res, res2) => {
   // console.log(res);
   const place = document.querySelector('.cloak__container-place');
@@ -89,8 +114,12 @@ const showLocation = (call) => {
 
 const cloak = () => {
   let seconds = Number(time.slice(-2));
+  // let seconds = 55;
+  // let minutes = 59;
   let minutes = Number(time.slice(3, 5));
+  // let hours = 7;
   let hours = Number(time.slice(0, 2));
+  changeTheme(hours);
   setInterval(() => {
     seconds += 1;
     if (seconds === 60) {
@@ -99,6 +128,7 @@ const cloak = () => {
       if (minutes === 60) {
         hours += 1;
         minutes = 0;
+        changeTheme(hours);
         if (hours === 24) {
           hours = 0;
         }
