@@ -179,8 +179,14 @@ main {
       font-weight: 100;
       margin-bottom: f.rem(19);
 
+      @include b.break('medium') {
+        font-size: f.rem(19);
+        margin-bottom: f.rem(24);
+      }
+
       @include b.break('large') {
         font-size: f.rem(25);
+        margin-bottom: f.rem(32);
       }
     }
     & .test {
