@@ -136,12 +136,6 @@ const cloak = () => {
   }, 1000);
 };
 
-getTimeZone(() => {
-  showLocation(() => {
-    cloak();
-  });
-});
-
 const newQuoute = () => {
   fetch(randonQuoteAPI)
     .then((res) => res.json())
@@ -150,9 +144,6 @@ const newQuoute = () => {
       quouteAuthor.textContent = res.author;
     });
 };
-
-quouteRefresh.addEventListener('click', newQuoute);
-window.addEventListener('load', newQuoute);
 
 const showMore = () => {
   quoute.classList.toggle('quoute--active');
@@ -167,4 +158,12 @@ const showMore = () => {
   }
 };
 
+getTimeZone(() => {
+  showLocation(() => {
+    cloak();
+  });
+});
+
 showMoreButton.addEventListener('click', showMore);
+quouteRefresh.addEventListener('click', newQuoute);
+window.addEventListener('load', newQuoute);
